@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template Beamer 
+% Based on MIT Beamer Template e Senac
+% Cores verde e vermelho tentam seguir o padrão visual da Udesc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\usepackage{graphicx,url}
+\usepackage{tikz}
+\usepackage[brazil]{babel}   
+\usepackage{textpos}
+\usepackage{transparent}
+
+\batchmode
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+\usepackage{amsmath,amssymb,enumerate,epsfig,bbm,calc,color,ifthen,capt-of}
+
+%-------------------------Declara figura do Logo-----------------------------------------------------
+\pgfdeclareimage[height=0.8cm]{Marca_Udesc}{Marca_Udesc.pdf}
+%\logo{\pgfuseimage{Marca_Udesc}\vspace*{7.0cm}}
+
+
+%% ------------------ Figura de fundo do slide de titulo
+%\setbeamercolor{titlelike}{parent=structure}
+%\makeatletter
+%\setbeamertemplate{title page}
+%{
+%	\begin{tikzpicture}[remember picture, overlay]
+%	\node[at=(current page.center)]{
+%		\includegraphics[width=\paperwidth, height=\paperheight]{risk1.jpg}	
+%	};
+%	\end{tikzpicture}
+%	%	\vbox{}
+%	%	\vfill
+%	%	\begingroup
+%	%	\centering
+%	%	\pgfsetfillopacity{0.1}
+%	%	\setbeamercolor{title}{bg=black}
+%	%	\begin{beamercolorbox}[sep=8pt,center]{title}	
+%	%		\usebeamerfont{title}\inserttitle\par%
+%	%		\ifx\insertsubtitle\@empty%
+%	%		\else%
+%	%		\vskip0.25em%
+%	%		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+%	%		\fi%
+%	%	\end{beamercolorbox}%
+%	\begin{textblock*}{0.8\textwidth}(2.5em, -2.5em)
+%		\centering
+%		\setbeamerfont{title}{size=\Huge}
+%		{\usebeamerfont{title}\usebeamercolor[bg]{title}\inserttitle\par}%
+%	\end{textblock*}
+%	%	\vskip3em\par
+%	%	\begin{beamercolorbox}[sep=8pt,center]{author}
+%	%		\usebeamerfont{author}\insertauthor
+%	%	\end{beamercolorbox}
+%	%	\begin{beamercolorbox}[sep=8pt,center]{institute}
+%	%		\usebeamerfont{institute}\insertinstitute
+%	%	\end{beamercolorbox}
+%	%	\begin{beamercolorbox}[sep=8pt,center]{date}
+%	%		\usebeamerfont{date}\insertdate
+%	%	\end{beamercolorbox}\vskip0.5em
+%	%	\endgroup
+%	\vfill
+%}
+%\makeatother
+
+%Global Background must be put in preamble
+%\usebackgroundtemplate%
+%{%
+%	\transparent{0.2}\includegraphics[width=\paperwidth,height=\paperheight]{risk-management.jpg}%
+%}
+
+
+%-------------------------Este código faz o menuzinho bacana na parte superior do slide------------
+\AtBeginSection[]
+{
+%  \begin{frame}<beamer>
+%    \frametitle{Sumário}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+}
+
+\AtBeginSubsection{}
+
+% Para ativar os tópicos de forma incremental
+%\beamerdefaultoverlayspecification{<+->}
+% -----------------------------------------------------------------------------
+% -----Página de título sem o logo -----------------------------------
+%\renewcommand{\titlepage}{\setbeamertemplate{logo}{}\titlepage}
+%\setbeamertemplate{logo}{}\titlepage
+
+% ------------ Logo na parte superior direita --------------------------------
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(.85\textwidth,-0.9cm)
+\pgfuseimage{Marca_Udesc}
+\end{textblock*}}
+%
+% - Para criar duas colunas em algum slide da apresentacao 
+% - a partir do Rmarkdown
+\def\begincols{\begin{columns}}
+\def\begincol{\begin{column}}
+\def\endcol{\end{column}}
+\def\endcols{\end{columns}}
+
+%%---Gerador de Sumário---------------------------------------------------------
+%\section[]{}
+%\begin{frame}{Sumário}
+%  \tableofcontents
+%\end{frame}
+%---Fim do Sumário------------------------------------------------------------
